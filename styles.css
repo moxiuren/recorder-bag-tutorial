@@ -1,0 +1,732 @@
+/* ==========================================================================
+   笛子 / 竖笛 B A G 互动教学系统 - CSS Style
+   ========================================================================== */
+
+:root {
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --primary-dark: #1e40af;
+  --secondary: #0d9488;
+  --secondary-light: #ccfbf1;
+  --accent-amber: #f59e0b;
+  --accent-amber-light: #fef3c7;
+  --accent-green: #10b981;
+  --accent-green-light: #d1fae5;
+  --accent-purple: #8b5cf6;
+  --accent-purple-light: #f3e8ff;
+  --danger: #ef4444;
+  
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-alt: #f1f5f9;
+  
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  --border-color: #e2e8f0;
+  --border-radius-sm: 8px;
+  --border-radius-md: 14px;
+  --border-radius-lg: 20px;
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+  --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.2);
+  
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "Fira Code", Monaco, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Nav */
+.header-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0d9488 100%);
+  color: #ffffff;
+  padding: 3rem 1.5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: var(--bg-body);
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+.header-hero .badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.header-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-hero p {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  max-width: 650px;
+  margin: 0 auto 1.8rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.nav-links a:hover {
+  background: #ffffff;
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Main Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+.section-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  position: relative;
+  z-index: 10;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--bg-alt);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-title h2 {
+  font-size: 1.6rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-title .section-tag {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.85rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Flute Selector Bar */
+.instrument-toggle-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: var(--primary-light);
+  border: 1px solid #bfdbfe;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  flex-wrap: wrap;
+}
+
+.btn-toggle-group {
+  display: inline-flex;
+  background: #ffffff;
+  padding: 3px;
+  border-radius: 30px;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-toggle {
+  border: none;
+  background: transparent;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-toggle.active {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(37,99,235,0.3);
+}
+
+/* Fingering Showcase Grid */
+.fingering-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.fingering-card {
+  background: var(--bg-body);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.fingering-card:hover, .fingering-card.active {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.fingering-card.new-note-card {
+  border-color: var(--accent-amber);
+  background: var(--accent-amber-light);
+}
+
+.fingering-card .note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.fingering-card .note-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.fingering-card .note-solfege {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--secondary);
+  background: #ffffff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.fingering-card .note-staff-preview {
+  height: 70px;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flute-diagram-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+.fingering-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: #ffffff;
+  padding: 0.5rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px dashed var(--border-color);
+}
+
+.btn-play-tone {
+  margin-top: 0.75rem;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border: 1px solid #bfdbfe;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s ease;
+}
+
+.btn-play-tone:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* Technique Cards */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tip-box {
+  background: var(--bg-alt);
+  padding: 1rem;
+  border-radius: var(--border-radius-sm);
+  border-left: 4px solid var(--secondary);
+}
+
+.tip-box h4 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  color: var(--secondary);
+}
+
+.tip-box p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Practice Sheet Music Section */
+.song-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.song-card {
+  background: var(--bg-body);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.song-card:hover, .song-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.song-card .song-level {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: #ffffff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+.song-card.new-note-song .song-level {
+  color: #d97706;
+  background: var(--accent-amber-light);
+}
+
+.song-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-main);
+}
+
+.song-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Player Console & Sheet Display */
+.player-console-card {
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.player-title-info h3 {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-action {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(37,99,235,0.3);
+}
+
+.btn-action:hover {
+  background: var(--primary-dark);
+  transform: scale(1.03);
+}
+
+.btn-action.btn-secondary {
+  background: var(--bg-alt);
+  color: var(--text-main);
+  box-shadow: none;
+  border: 1px solid var(--border-color);
+}
+
+.btn-action.btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+.btn-action.btn-success {
+  background: var(--accent-green);
+  box-shadow: 0 2px 5px rgba(16,185,129,0.3);
+}
+
+.btn-action.btn-success:hover {
+  background: #059669;
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.control-item input[type="range"] {
+  width: 100px;
+}
+
+/* Notation Tabs & Display */
+.notation-toggle-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.notation-tab {
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  background: var(--bg-alt);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.notation-tab.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.sheet-music-wrapper {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 1.5rem;
+  min-height: 220px;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.abcjs-container {
+  width: 100%;
+}
+
+.numbered-notation-view {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  line-height: 2;
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px dashed #cbd5e1;
+}
+
+.numbered-bar {
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-right: 2px solid #94a3b8;
+}
+
+.numbered-note {
+  display: inline-block;
+  width: 2rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary-dark);
+  position: relative;
+}
+
+.numbered-note.current-highlight {
+  background: #fef08a;
+  border-radius: 4px;
+  transform: scale(1.15);
+}
+
+/* Real-time Follower Fingering Footer */
+.realtime-fingering-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--primary-light);
+  border-radius: var(--border-radius-sm);
+  padding: 0.8rem;
+  margin-top: 1rem;
+}
+
+.realtime-fingering-bar .active-note-label {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+/* New Note Section */
+.new-note-banner {
+  background: linear-gradient(135deg, #7c3aed 0%, #9333ea 50%, #c026d3 100%);
+  color: #ffffff;
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.new-note-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.new-note-banner p {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.new-note-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.new-note-highlight-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.new-note-highlight-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.new-note-highlight-box ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.new-note-highlight-box li {
+  margin-bottom: 0.4rem;
+}
+
+/* Quiz Section */
+.quiz-card {
+  background: var(--bg-alt);
+  border: 2px dashed var(--secondary);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.quiz-question-box {
+  background: #ffffff;
+  border-radius: var(--border-radius-sm);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-quiz-opt {
+  background: #ffffff;
+  border: 2px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 90px;
+}
+
+.btn-quiz-opt:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  height: 2rem;
+}
+
+.quiz-score-badge {
+  display: inline-block;
+  background: var(--secondary);
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+  background: #ffffff;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Print Optimization */
+@media print {
+  .header-hero, .nav-links, .player-controls, .instrument-toggle-bar, .quiz-card, footer, .btn-action, .btn-play-tone {
+    display: none !important;
+  }
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+  .section-card {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+  }
+  .sheet-music-wrapper {
+    border: none;
+    padding: 0;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .header-hero h1 {
+    font-size: 1.8rem;
+  }
+  .section-card {
+    padding: 1.25rem;
+  }
+  .player-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

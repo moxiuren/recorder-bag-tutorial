@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>笛子 / 竖笛 B A G 基础练习与新音解锁教学系统</title>
+  <meta name="description" content="专为零基础与初学者打造的 B A G 笛子/竖笛练习曲集与互动教学 HTML，包含智能谱表渲染、Web Audio 吹奏音效、实时指法图解与新音 C 解锁练习。">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- ABCjs CDN for Sheet Music Staff Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/abcjs@6.2.2/dist/abcjs-basic-min.js"></script>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="header-hero">
+    <span class="badge">🎵 轻松学笛子 / 竖笛</span>
+    <h1>B A G 练习曲集与互动教学系统</h1>
+    <p>适合只会 B A G (7 6 5) 的初学者与学生。循序渐进练习长音、吐音、经典小曲、稍长综合曲，并在文末解锁新音符！</p>
+    
+    <nav class="nav-links">
+      <a href="#section-fingering">📖 基础指法 (BAG)</a>
+      <a href="#section-songs">🎼 练习曲库 (Sheet Music)</a>
+      <a href="#section-player">▶️ 互动跟练播放器</a>
+      <a href="#section-newnote">🎉 解锁新音符 (C音)</a>
+      <a href="#section-quiz">🎯 指法小测试</a>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <!-- Section 1: Instrument Mode & Fingering Basics -->
+    <section id="section-fingering" class="section-card">
+      <div class="section-title">
+        <h2>🪈 B A G 三音指法与发音基石</h2>
+        <span class="section-tag">必备基础</span>
+      </div>
+
+      <!-- 乐器指法切换器 -->
+      <div class="instrument-toggle-bar">
+        <span>切换指法类型：</span>
+        <div class="btn-toggle-group">
+          <button id="btnTypeRecorder" class="btn-toggle active" onclick="setInstrumentType('recorder')">
+            🪈 8孔高音竖笛 (Recorder)
+          </button>
+          <button id="btnTypeBamboo" class="btn-toggle" onclick="setInstrumentType('bamboo')">
+            🎋 6孔中国竹笛 (Flute)
+          </button>
+        </div>
+      </div>
+
+      <!-- 指法卡片网格 -->
+      <div class="fingering-grid" id="fingeringGrid">
+        <!-- 由 app.js 动态生成 B, A, G, C 四个指法卡片 -->
+      </div>
+
+      <!-- 吹奏技巧小贴士 -->
+      <div class="tips-grid">
+        <div class="tip-box">
+          <h4>💨 吐音技巧 (Tonguing)</h4>
+          <p>发音时嘴里轻念「Tu (吐)」，舌尖在齿龈轻轻一弹。切忌直接用肺部呼气，舌头是控制音符断连的关键！</p>
+        </div>
+        <div class="tip-box">
+          <h4>🫁 呼吸与口型 (Breathing)</h4>
+          <p>吹低音 G 和 A 时气息要平稳自然，像吹灭蜡烛一样温和；吹高音时稍加腹部支撑，不可用力过猛导致发尖。</p>
+        </div>
+        <div class="tip-box">
+          <h4>✋ 手姿与按孔 (Posture)</h4>
+          <p>用手指肚（柔软部分）按住音孔，而不是指尖。盖严音孔不可漏气，否则容易发出难听的杂音或漏气声。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Song Selector -->
+    <section id="section-songs" class="section-card">
+      <div class="section-title">
+        <h2>🎼 B A G 渐进式练习曲库</h2>
+        <span class="section-tag">由易到难 · 稍长曲目</span>
+      </div>
+
+      <div class="song-selector-grid" id="songSelectorGrid">
+        <!-- 由 app.js 动态填充曲目卡片 -->
+      </div>
+    </section>
+
+    <!-- Section 3: Interactive Practice Player Console -->
+    <section id="section-player" class="player-console-card">
+      <div class="player-header">
+        <div class="player-title-info">
+          <h3 id="playerSongTitle">曲目加载中...</h3>
+          <p id="playerSongDesc" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.2rem;"></p>
+        </div>
+
+        <div class="player-controls">
+          <button id="btnPlay" class="btn-action" onclick="togglePlay()">
+            ▶️ 开始跟练播放
+          </button>
+
+          <div class="control-item">
+            <label for="bpmInput">速度:</label>
+            <input type="range" id="bpmInput" min="40" max="140" value="80" step="5">
+            <span id="bpmValue">80 BPM</span>
+          </div>
+
+          <button class="btn-action btn-secondary" onclick="window.print()">
+            🌁 打印本谱
+          </button>
+        </div>
+      </div>
+
+      <!-- 乐谱视图切换 (五线谱 / 简谱) -->
+      <div class="notation-toggle-bar">
+        <button id="tabStaff" class="notation-tab active" onclick="setNotationView('staff')">五线谱 (Staff)</button>
+        <button id="tabNumbered" class="notation-tab" onclick="setNotationView('numbered')">简谱 (Numbered Notation)</button>
+      </div>
+
+      <!-- 乐谱渲染容器 -->
+      <div class="sheet-music-wrapper">
+        <div id="abcContainer" class="abcjs-container"></div>
+        <div id="numberedContainer" style="display: none;"></div>
+      </div>
+
+      <!-- 实时跟练指法提示条 -->
+      <div class="realtime-fingering-bar">
+        <div style="font-weight: bold; color: var(--text-muted);">实时指法引导：</div>
+        <div id="rtNoteName" class="active-note-label">B (7)</div>
+        <div id="rtFluteSvg" style="height: 140px;"></div>
+        <div id="rtNoteDesc" style="font-size: 0.9rem; color: var(--text-muted); max-width: 250px;"></div>
+      </div>
+    </section>
+
+    <!-- Section 4: New Note Unlock (High C) -->
+    <section id="section-newnote" class="new-note-banner">
+      <h2>🎉 终极挑战：解锁新音符 — 高音 C (1)</h2>
+      <p>恭喜学生们熟练掌握了 B, A, G！现在让我们加入第 4 个全新音符：高音 C (Do / 1)，扩展更丰富的旋律表现力！</p>
+
+      <div class="new-note-content-grid">
+        <div class="new-note-highlight-box">
+          <h3>🔍 高音 C 指法要领</h3>
+          <p><strong>8孔竖笛：</strong> 左手按住【背孔】与【第2孔】—— <strong>特别提醒：第1孔（食指）必须放开！</strong></p>
+          <p style="margin-top: 0.5rem;"><strong>6孔竹笛：</strong> 开 4, 5, 6 孔，按住上2孔并以适中平稳气流吹出高音 Do。</p>
+          <ul>
+            <li>从 B 到 C 转换：抬起食指，按下中指。</li>
+            <li>从 A 到 C 转换：抬起食指，保持中指按住。</li>
+            <li>练习时多体会手指的替代感与口风稳定性。</li>
+          </ul>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="background: #ffffff; padding: 1rem; border-radius: var(--border-radius-md); display: inline-block; box-shadow: var(--shadow-md); color: var(--text-main);">
+            <h4 style="color: var(--accent-purple); margin-bottom: 0.5rem;">C 音 (高音 1) 指法图</h4>
+            <div id="c-note-diag"></div>
+            <button class="btn-play-tone" style="margin-top: 0.5rem;" onclick="synth.playNote(523.25, 1.0)">
+              🔊 试听高音 C (523Hz)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; background: rgba(255,255,255,0.1); padding: 1rem; border-radius: var(--border-radius-md);">
+        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">💡 新音练习提示：</h4>
+        <p>滑动上方曲目列表选择第 7 题《高音 C 跳跃队》、第 8 题《四音阶小舞曲》与《欢乐颂精简版》，亲自感受加入 C 音后的奇妙旋律吧！</p>
+      </div>
+    </section>
+
+    <!-- Section 5: Fingering Quiz -->
+    <section id="section-quiz" class="section-card">
+      <div class="section-title">
+        <h2>🎯 课堂互动：指法眼疾手快小测试</h2>
+        <span class="section-tag">巩固检测</span>
+      </div>
+
+      <div class="quiz-card">
+        <span id="quizScore" class="quiz-score-badge">得分: 0</span>
+        <div class="quiz-question-box">
+          <h3 id="quizTargetName">题目加载中...</h3>
+        </div>
+        
+        <div class="quiz-options" id="quizOptions">
+          <!-- 由 app.js 动态生成 3 个选项 -->
+        </div>
+
+        <div id="quizFeedback" class="quiz-feedback"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>笛子/竖笛 B A G 教学系统 &copy; 2026 | 专为教师教学与学生自主练习设计</p>
+    <p style="margin-top: 0.4rem; font-size: 0.8rem;">部署于 GitHub Pages · 支持全平台移动端与 Desktop 浏览器访问</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // 渲染新音 C 的静态 SVG
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("c-note-diag").innerHTML = renderFluteSVG("C5");
+    });
+  </script>
+</body>
+</html>
