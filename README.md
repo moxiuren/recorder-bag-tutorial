@@ -14,12 +14,12 @@
    - 🎋 **6孔中国竹笛 (Bamboo Flute)**
    - 实时矢量 SVG 图解，点击直观预览按孔位置与试听发音。
 
-2. **渐进式练习曲库（共 10 首曲目）**：
+2. **渐进式练习曲库（共 11 首曲目）**：
    - **基础阶段 (Warm-up & Tonguing)**：三音长音练习、吐音与节奏小练习。
    - **经典入门 (Classic Songs)**：《热十字包》(Hot Cross Buns)、《玛莉的小羊》(Mary Had a Little Lamb)。
    - **稍长进阶 (Longer Master Pieces)**：《月光下》(Au Clair de la Lune)、16小节稍长综合曲《三音欢唱狂想曲》。
    - **新音拓展 (New Notes)**：《高音 C 跳跃队》、《四音阶小舞曲 (G A B C)》、《高音 D 阶梯与跳进》。
-   - **终极名曲通关 (Masterpiece)**：16小节完整版《欢乐颂》(Ode to Joy - 贝多芬)。
+   - **终极名曲通关 (Masterpieces)**：16小节完整版《欢乐颂》(Ode to Joy) 与轻快版《铃儿响叮当》(Jingle Bells)。
 
 3. **智能交互与音频跟练系统**：
    - **双乐谱模式**：五线谱 (Staff) 与 简谱 (Numbered Notation) 一键无缝切换。

@@ -279,6 +279,34 @@ const SONGS = [
       { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 1 },
       { note: "A4", dur: 2 }, { note: "G4", dur: 2 }
     ]
+  },
+  {
+    id: "song-jingle-bells",
+    title: "11. 🎄 欢快名曲：铃儿响叮当 (Jingle Bells)",
+    level: "五音名曲",
+    badgeClass: "badge-new-note",
+    isNewNoteSong: true,
+    bpm: 90,
+    description: "家喻户晓的世界经典！涵盖 G A B C D 全五音，节奏轻快，强化 D 音跳跃与手指敏捷度。",
+    abc: `X:11\nT:11. 铃儿响叮当 (Jingle Bells)\nM:4/4\nL:1/4\nK:C\n"B"B B "B"B2 | "B"B B "B"B2 | "B"B "D"d "G"G "A"A | "B"B4 |\n"C"c c "C"c c | "C"c "B"B "B"B B | "B"B "A"A "A"A "B"B | "A"A2 "D"d2 |\n"B"B B "B"B2 | "B"B B "B"B2 | "B"B "D"d "G"G "A"A | "B"B4 |\n"C"c c "C"c c | "C"c "B"B "B"B B | "D"d d "C"c "A"A | "G"G4 |]`,
+    notes: [
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "B4", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "B4", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "D5", dur: 1 }, { note: "G4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "B4", dur: 4 },
+      { note: "C5", dur: 1 }, { note: "C5", dur: 1 }, { note: "C5", dur: 1 }, { note: "C5", dur: 1 },
+      { note: "C5", dur: 1 }, { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "B4", dur: 1 },
+      { note: "B4", dur: 1 }, { note: "A4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 1 },
+      { note: "A4", dur: 2 }, { note: "D5", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "B4", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "B4", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "D5", dur: 1 }, { note: "G4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "B4", dur: 4 },
+      { note: "C5", dur: 1 }, { note: "C5", dur: 1 }, { note: "C5", dur: 1 }, { note: "C5", dur: 1 },
+      { note: "C5", dur: 1 }, { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "B4", dur: 1 },
+      { note: "D5", dur: 1 }, { note: "D5", dur: 1 }, { note: "C5", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 4 }
+    ]
   }
 ];
 
