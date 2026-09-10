@@ -48,6 +48,18 @@ const NOTE_DATA = {
     bambooHoles: [1, 1, 1, 0, 0, 0],         // 竹笛高音 Do
     descRecorder: "左手按住【背孔】与【第2孔】（第1孔放开！）",
     descBamboo: "开4, 5, 6孔 (按上2孔与高音气流)"
+  },
+  D5: {
+    name: "D (高音)",
+    solfege: "2 (Re)",
+    freq: 587.33,
+    abcName: "d",
+    numbered: "2",
+    isNew: true,
+    recorderHoles: [0, 0, 1, 0, 0, 0, 0, 0], // Thumb open, Hole 1 open, Hole 2 closed
+    bambooHoles: [1, 1, 0, 0, 0, 0],         // 竹笛: 开第3,4,5,6孔 (按住第1,2孔)
+    descRecorder: "左手【仅按第2孔】（背孔与第1孔完全放开！）",
+    descBamboo: "开第3, 4, 5, 6孔 (按住第1, 2孔，稍强气流)"
   }
 };
 
@@ -218,6 +230,54 @@ const SONGS = [
       { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "C5", dur: 2 },
       { note: "C5", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 }, { note: "G4", dur: 1 },
       { note: "G4", dur: 4 }
+    ]
+  },
+  {
+    id: "song-new-note-d-steps",
+    title: "9. 🎉 新音拓展：高音 D 阶梯与跳进",
+    level: "新音进阶",
+    badgeClass: "badge-new-note",
+    isNewNoteSong: true,
+    bpm: 80,
+    description: "专注训练高音 D (2)！体会 C 与 D 之间仅通过大拇指开合的敏捷切换。",
+    abc: `X:9\nT:9. 新音拓展：高音 D 阶梯与跳进\nM:4/4\nL:1/4\nK:C\n"B"B "C"c "D"d2 | "D"d "C"c "B"B2 | "A"A "B"B "C"c "D"d | "D"d2 "C"c2 |\n"D"d "C"c "B"B "A"A | "G"G "A"A "B"B2 | "C"c "D"d "C"c "B"B | "A"A2 "G"G2 |]`,
+    notes: [
+      { note: "B4", dur: 1 }, { note: "C5", dur: 1 }, { note: "D5", dur: 2 },
+      { note: "D5", dur: 1 }, { note: "C5", dur: 1 }, { note: "B4", dur: 2 },
+      { note: "A4", dur: 1 }, { note: "B4", dur: 1 }, { note: "C5", dur: 1 }, { note: "D5", dur: 1 },
+      { note: "D5", dur: 2 }, { note: "C5", dur: 2 },
+      { note: "D5", dur: 1 }, { note: "C5", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 2 },
+      { note: "C5", dur: 1 }, { note: "D5", dur: 1 }, { note: "C5", dur: 1 }, { note: "B4", dur: 1 },
+      { note: "A4", dur: 2 }, { note: "G4", dur: 2 }
+    ]
+  },
+  {
+    id: "song-ode-to-joy",
+    title: "10. 👑 终极通关：欢乐颂 (Ode to Joy)",
+    level: "五音名曲",
+    badgeClass: "badge-new-note",
+    isNewNoteSong: true,
+    bpm: 85,
+    description: "贝多芬世界名曲！融合 G A B C D 全部 5 个音符的终极大合奏。",
+    abc: `X:10\nT:10. 欢乐颂 (Ode to Joy)\nM:4/4\nL:1/4\nK:C\n"B"B B "C"c "D"d | "D"d "C"c "B"B "A"A | "G"G G "A"A "B"B | "B"B2 "A"A2 |\n"B"B B "C"c "D"d | "D"d "C"c "B"B "A"A | "G"G G "A"A "B"B | "A"A2 "G"G2 |\n"A"A A "B"B "G"G | "A"A "B"B/2"C"c/2 "B"B "G"G | "A"A "B"B/2"C"c/2 "B"B "A"A | "G"G "A"A "D"d2 |\n"B"B B "C"c "D"d | "D"d "C"c "B"B "A"A | "G"G G "A"A "B"B | "A"A2 "G"G2 |]`,
+    notes: [
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "C5", dur: 1 }, { note: "D5", dur: 1 },
+      { note: "D5", dur: 1 }, { note: "C5", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 1 },
+      { note: "B4", dur: 2 }, { note: "A4", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "C5", dur: 1 }, { note: "D5", dur: 1 },
+      { note: "D5", dur: 1 }, { note: "C5", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 1 },
+      { note: "A4", dur: 2 }, { note: "G4", dur: 2 },
+      { note: "A4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 1 }, { note: "G4", dur: 1 },
+      { note: "A4", dur: 1 }, { note: "B4", dur: 0.5 }, { note: "C5", dur: 0.5 }, { note: "B4", dur: 1 }, { note: "G4", dur: 1 },
+      { note: "A4", dur: 1 }, { note: "B4", dur: 0.5 }, { note: "C5", dur: 0.5 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 1 }, { note: "A4", dur: 1 }, { note: "D5", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "C5", dur: 1 }, { note: "D5", dur: 1 },
+      { note: "D5", dur: 1 }, { note: "C5", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 1 },
+      { note: "A4", dur: 2 }, { note: "G4", dur: 2 }
     ]
   }
 ];
@@ -456,6 +516,11 @@ function setInstrumentType(type) {
   // 重新渲染指法图解
   initFingeringGrid();
   updateRealtimeFingering();
+
+  const cDiag = document.getElementById("c-note-diag");
+  if (cDiag) cDiag.innerHTML = renderFluteSVG("C5");
+  const dDiag = document.getElementById("d-note-diag");
+  if (dDiag) dDiag.innerHTML = renderFluteSVG("D5");
 }
 
 // 渲染曲目选择卡片

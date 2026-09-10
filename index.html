@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>笛子 / 竖笛 B A G 基础练习与新音解锁教学系统</title>
-  <meta name="description" content="专为零基础与初学者打造的 B A G 笛子/竖笛练习曲集与互动教学 HTML，包含智能谱表渲染、Web Audio 吹奏音效、实时指法图解与新音 C 解锁练习。">
+  <title>笛子 / 竖笛 B A G 基础练习与高音进阶 (C & D) 教学系统</title>
+  <meta name="description" content="专为零基础与初学者打造的 B A G 笛子/竖笛练习曲集与互动教学 HTML，包含智能谱表渲染、Web Audio 吹奏音效、实时指法图解与新音 C & D 解锁及《欢乐颂》名曲练习。">
   
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -17,14 +17,14 @@
   <!-- Hero Header -->
   <header class="header-hero">
     <span class="badge">🎵 轻松学笛子 / 竖笛</span>
-    <h1>B A G 练习曲集与互动教学系统</h1>
-    <p>适合只会 B A G (7 6 5) 的初学者与学生。循序渐进练习长音、吐音、经典小曲、稍长综合曲，并在文末解锁新音符！</p>
+    <h1>B A G 练习曲集与高音进阶 (C & D) 教学系统</h1>
+    <p>适合只会 B A G (7 6 5) 的初学者与学生。循序渐进练习长音、吐音、经典小曲、进阶综合曲，并解锁高音 C 与高音 D，挑战世界名曲《欢乐颂》！</p>
     
     <nav class="nav-links">
       <a href="#section-fingering">📖 基础指法 (BAG)</a>
       <a href="#section-songs">🎼 练习曲库 (Sheet Music)</a>
       <a href="#section-player">▶️ 互动跟练播放器</a>
-      <a href="#section-newnote">🎉 解锁新音符 (C音)</a>
+      <a href="#section-newnote">🎉 解锁高音 (C & D 音)</a>
       <a href="#section-quiz">🎯 指法小测试</a>
     </nav>
   </header>
@@ -70,6 +70,10 @@
         <div class="tip-box">
           <h4>✋ 手姿与按孔 (Posture)</h4>
           <p>用手指肚（柔软部分）按住音孔，而不是指尖。盖严音孔不可漏气，否则容易发出难听的杂音或漏气声。</p>
+        </div>
+        <div class="tip-box">
+          <h4>⚖️ 右手支撑与平衡 (Balance)</h4>
+          <p>吹奏高音 C 和 D 时左手松开了食指甚至背孔，笛子易晃动。右手大拇指在笛身下方轻托稳定笛身，嘴唇含稳吹口！</p>
         </div>
       </div>
     </section>
@@ -132,37 +136,64 @@
       </div>
     </section>
 
-    <!-- Section 4: New Note Unlock (High C) -->
+    <!-- Section 4: New Note Unlock (High C & High D) -->
     <section id="section-newnote" class="new-note-banner">
-      <h2>🎉 终极挑战：解锁新音符 — 高音 C (1)</h2>
-      <p>恭喜学生们熟练掌握了 B, A, G！现在让我们加入第 4 个全新音符：高音 C (Do / 1)，扩展更丰富的旋律表现力！</p>
+      <h2>🎉 进阶挑战：解锁新音符 — 高音 C (1) 与 高音 D (2)</h2>
+      <p>恭喜学生们熟练掌握了 B, A, G！现在让我们加入高音区两大关键音：高音 C (1 / Do) 与 高音 D (2 / Re)，组成完整的 G-A-B-C-D 五音音阶，向世界名曲进军！</p>
 
       <div class="new-note-content-grid">
+        <!-- 高音 C 卡片 -->
         <div class="new-note-highlight-box">
-          <h3>🔍 高音 C 指法要领</h3>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h3>🔍 高音 C (1) 指法要领</h3>
+            <span style="background: rgba(255,255,255,0.25); color: #fff; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: 700;">基础高音</span>
+          </div>
           <p><strong>8孔竖笛：</strong> 左手按住【背孔】与【第2孔】—— <strong>特别提醒：第1孔（食指）必须放开！</strong></p>
           <p style="margin-top: 0.5rem;"><strong>6孔竹笛：</strong> 开 4, 5, 6 孔，按住上2孔并以适中平稳气流吹出高音 Do。</p>
+          <div style="text-align: center; margin: 1rem 0;">
+            <div style="background: #ffffff; padding: 0.8rem; border-radius: var(--border-radius-md); display: inline-block; box-shadow: var(--shadow-sm); color: var(--text-main);">
+              <h4 style="color: var(--accent-purple); margin-bottom: 0.5rem;">C 音 (高音 1)</h4>
+              <div id="c-note-diag"></div>
+              <button class="btn-play-tone" style="margin-top: 0.5rem;" onclick="synth.playNote(523.25, 0.8)">
+                🔊 试听高音 C (523Hz)
+              </button>
+            </div>
+          </div>
           <ul>
-            <li>从 B 到 C 转换：抬起食指，按下中指。</li>
-            <li>从 A 到 C 转换：抬起食指，保持中指按住。</li>
-            <li>练习时多体会手指的替代感与口风稳定性。</li>
+            <li><strong>B → C 转换：</strong> 抬起食指，按下中指。</li>
+            <li><strong>A → C 转换：</strong> 抬起食指，保持中指按住。</li>
           </ul>
         </div>
 
-        <div style="text-align: center;">
-          <div style="background: #ffffff; padding: 1rem; border-radius: var(--border-radius-md); display: inline-block; box-shadow: var(--shadow-md); color: var(--text-main);">
-            <h4 style="color: var(--accent-purple); margin-bottom: 0.5rem;">C 音 (高音 1) 指法图</h4>
-            <div id="c-note-diag"></div>
-            <button class="btn-play-tone" style="margin-top: 0.5rem;" onclick="synth.playNote(523.25, 1.0)">
-              🔊 试听高音 C (523Hz)
-            </button>
+        <!-- 高音 D 卡片 -->
+        <div class="new-note-highlight-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h3>🚀 高音 D (2) 指法要领</h3>
+            <span style="background: rgba(255,255,255,0.25); color: #fff; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: 700;">飞跃进阶</span>
           </div>
+          <p><strong>8孔竖笛：</strong> 左手【仅按第2孔】—— <strong>大拇指背孔与第1孔完全放开！</strong></p>
+          <p style="margin-top: 0.5rem;"><strong>6孔竹笛：</strong> 开 3, 4, 5, 6 孔（按住第1、2孔），中高音稍聚拢气流吹出高音 Re。</p>
+          <div style="text-align: center; margin: 1rem 0;">
+            <div style="background: #ffffff; padding: 0.8rem; border-radius: var(--border-radius-md); display: inline-block; box-shadow: var(--shadow-sm); color: var(--text-main);">
+              <h4 style="color: var(--accent-purple); margin-bottom: 0.5rem;">D 音 (高音 2)</h4>
+              <div id="d-note-diag"></div>
+              <button class="btn-play-tone" style="margin-top: 0.5rem;" onclick="synth.playNote(587.33, 0.8)">
+                🔊 试听高音 D (587Hz)
+              </button>
+            </div>
+          </div>
+          <ul>
+            <li><strong>C ↔ D 神奇机关：</strong> 中指保持按住第2孔，<strong>只需抬起/按下大拇指</strong>！</li>
+            <li><strong>口诀：</strong> “拇指一抬就是 D，拇指一按变成 C”。</li>
+          </ul>
         </div>
       </div>
 
-      <div style="margin-top: 2rem; background: rgba(255,255,255,0.1); padding: 1rem; border-radius: var(--border-radius-md);">
-        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">💡 新音练习提示：</h4>
-        <p>滑动上方曲目列表选择第 7 题《高音 C 跳跃队》、第 8 题《四音阶小舞曲》与《欢乐颂精简版》，亲自感受加入 C 音后的奇妙旋律吧！</p>
+      <!-- 教学秘籍与练习建议 -->
+      <div style="margin-top: 1.5rem; background: rgba(255,255,255,0.15); padding: 1.25rem; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.25);">
+        <h4 style="font-size: 1.15rem; margin-bottom: 0.5rem;">💡 教学秘籍：高音持笛稳定诀窍</h4>
+        <p style="margin-bottom: 0.5rem;">吹奏高音 D 时，由于左手拇指和食指全部放开，初学者极易握不稳笛子而倾斜。<strong>关键提示：</strong> 右手拇指在笛身下方提供稳定的向上支撑，嘴唇适度含稳吹口，做到“中指按准、拇指开关、笛身纹丝不动”。</p>
+        <p><strong>终极名曲挑战：</strong> 选择曲目库第 9 题《高音 D 阶梯与跳进》快速熟悉 C-D 切换，接着向第 10 题终极通关大作《欢乐颂 (Ode to Joy)》发起冲击！</p>
       </div>
     </section>
 
@@ -180,7 +211,7 @@
         </div>
         
         <div class="quiz-options" id="quizOptions">
-          <!-- 由 app.js 动态生成 3 个选项 -->
+          <!-- 由 app.js 动态生成选项 -->
         </div>
 
         <div id="quizFeedback" class="quiz-feedback"></div>
@@ -197,9 +228,12 @@
 
   <script src="app.js"></script>
   <script>
-    // 渲染新音 C 的静态 SVG
+    // 渲染新音 C 与 D 的静态 SVG
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("c-note-diag").innerHTML = renderFluteSVG("C5");
+      const cDiag = document.getElementById("c-note-diag");
+      if (cDiag) cDiag.innerHTML = renderFluteSVG("C5");
+      const dDiag = document.getElementById("d-note-diag");
+      if (dDiag) dDiag.innerHTML = renderFluteSVG("D5");
     });
   </script>
 </body>
