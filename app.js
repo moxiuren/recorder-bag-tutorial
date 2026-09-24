@@ -60,6 +60,18 @@ const NOTE_DATA = {
     bambooHoles: [1, 1, 0, 0, 0, 0],         // 竹笛: 开第3,4,5,6孔 (按住第1,2孔)
     descRecorder: "左手【仅按第2孔】（背孔与第1孔完全放开！）",
     descBamboo: "开第3, 4, 5, 6孔 (按住第1, 2孔，稍强气流)"
+  },
+  E4: {
+    name: "E",
+    solfege: "3 (Mi)",
+    freq: 329.63,
+    abcName: "E",
+    numbered: "3",
+    isNew: true,
+    recorderHoles: [1, 1, 1, 1, 1, 1, 0, 0], // Thumb + H1,H2,H3 + H4,H5
+    bambooHoles: [1, 1, 1, 1, 0, 0],         // 筒音作1法: 按住3,4,5,6孔 (开1,2孔)
+    descRecorder: "左手按【背孔与1、2、3孔】，右手按【第4、5孔】（双手协作，右手加入）",
+    descBamboo: "开第1, 2孔 (按住第3, 4, 5, 6孔，平稳温和气流)"
   }
 };
 
@@ -307,6 +319,69 @@ const SONGS = [
       { note: "D5", dur: 1 }, { note: "D5", dur: 1 }, { note: "C5", dur: 1 }, { note: "A4", dur: 1 },
       { note: "G4", dur: 4 }
     ]
+  },
+  {
+    id: "song-new-note-e-warmup",
+    title: "12. 🎉 新音拓展：低音 E 的右手召唤",
+    level: "右手新音",
+    badgeClass: "badge-new-note",
+    isNewNoteSong: true,
+    bpm: 75,
+    description: "双手协作初体验！从 G (左手三指) 平稳下行按落右手第 4、5 孔，体会低音 E (3) 的温厚音色。",
+    abc: `X:12\nT:12. 新音拓展：低音 E 的右手召唤\nM:4/4\nL:1/4\nK:C\n"G"G2 "E"E2 | "G"G2 "E"E2 | "G"G "A"A "B"B "A"A | "G"G2 "E"E2 |\n"E"E E "G"G G | "A"A A "B"B2 | "B"B "A"A "G"G "E"E | "E"E4 |]`,
+    notes: [
+      { note: "G4", dur: 2 }, { note: "E4", dur: 2 },
+      { note: "G4", dur: 2 }, { note: "E4", dur: 2 },
+      { note: "G4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 2 }, { note: "E4", dur: 2 },
+      { note: "E4", dur: 1 }, { note: "E4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 },
+      { note: "A4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "A4", dur: 1 }, { note: "G4", dur: 1 }, { note: "E4", dur: 1 },
+      { note: "E4", dur: 4 }
+    ]
+  },
+  {
+    id: "song-brahms-lullaby",
+    title: "13. 🌙 经典名曲：布拉姆斯摇篮曲 (Brahms' Lullaby)",
+    level: "六音名曲",
+    badgeClass: "badge-new-note",
+    isNewNoteSong: true,
+    bpm: 75,
+    description: "世界级优美摇篮曲！融合 E G A B C，体验 E 音在如歌旋律中的柔美表达。",
+    abc: `X:13\nT:13. 布拉姆斯摇篮曲 (Brahms' Lullaby)\nM:4/4\nL:1/4\nK:C\n"E"E/2E/2 "G"G3 | "E"E/2E/2 "G"G3 | "E"E "G"G "C"c "B"B | "A"A2 "G"G2 |\n"A"A A "B"B "G"G | "A"A "B"B "G"G2 | "E"E "G"G "C"c "A"A | "G"G2 "E"E2 |]`,
+    notes: [
+      { note: "E4", dur: 0.5 }, { note: "E4", dur: 0.5 }, { note: "G4", dur: 3 },
+      { note: "E4", dur: 0.5 }, { note: "E4", dur: 0.5 }, { note: "G4", dur: 3 },
+      { note: "E4", dur: 1 }, { note: "G4", dur: 1 }, { note: "C5", dur: 1 }, { note: "B4", dur: 1 },
+      { note: "A4", dur: 2 }, { note: "G4", dur: 2 },
+      { note: "A4", dur: 1 }, { note: "A4", dur: 1 }, { note: "B4", dur: 1 }, { note: "G4", dur: 1 },
+      { note: "A4", dur: 1 }, { note: "B4", dur: 1 }, { note: "G4", dur: 2 },
+      { note: "E4", dur: 1 }, { note: "G4", dur: 1 }, { note: "C5", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 2 }, { note: "E4", dur: 2 }
+    ]
+  },
+  {
+    id: "song-old-macdonald",
+    title: "14. 🚜 欢快儿歌：老麦克唐纳 (Old MacDonald)",
+    level: "全音进阶",
+    badgeClass: "badge-new-note",
+    isNewNoteSong: true,
+    bpm: 85,
+    description: "节奏轻快、耳熟能详的农场儿歌！综合运用 E G A B D 五音跳跃，考验右手迅速归位能力。",
+    abc: `X:14\nT:14. 老麦克唐纳 (Old MacDonald)\nM:4/4\nL:1/4\nK:C\n"G"G G G "D"d | "E"E E "D"d2 | "B"B B "A"A A | "G"G4 |\n"D"d "D"d "G"G2 | "D"d "D"d "G"G2 | "G"G/2G/2G/2G/2 "G"G G |\n"G"G G G "D"d | "E"E E "D"d2 | "B"B B "A"A A | "G"G4 |]`,
+    notes: [
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "D5", dur: 1 },
+      { note: "E4", dur: 1 }, { note: "E4", dur: 1 }, { note: "D5", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 4 },
+      { note: "D5", dur: 1 }, { note: "D5", dur: 1 }, { note: "G4", dur: 2 },
+      { note: "D5", dur: 1 }, { note: "D5", dur: 1 }, { note: "G4", dur: 2 },
+      { note: "G4", dur: 0.5 }, { note: "G4", dur: 0.5 }, { note: "G4", dur: 0.5 }, { note: "G4", dur: 0.5 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 },
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "D5", dur: 1 },
+      { note: "E4", dur: 1 }, { note: "E4", dur: 1 }, { note: "D5", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 4 }
+    ]
   }
 ];
 
@@ -549,6 +624,8 @@ function setInstrumentType(type) {
   if (cDiag) cDiag.innerHTML = renderFluteSVG("C5");
   const dDiag = document.getElementById("d-note-diag");
   if (dDiag) dDiag.innerHTML = renderFluteSVG("D5");
+  const eDiag = document.getElementById("e-note-diag");
+  if (eDiag) eDiag.innerHTML = renderFluteSVG("E4");
 }
 
 // 渲染曲目选择卡片
