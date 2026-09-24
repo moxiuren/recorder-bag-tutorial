@@ -72,6 +72,18 @@ const NOTE_DATA = {
     bambooHoles: [1, 1, 1, 1, 0, 0],         // 筒音作1法: 按住3,4,5,6孔 (开1,2孔)
     descRecorder: "左手按【背孔与1、2、3孔】，右手按【第4、5孔】（双手协作，右手加入）",
     descBamboo: "开第1, 2孔 (按住第3, 4, 5, 6孔，平稳温和气流)"
+  },
+  D4: {
+    name: "D (低音)",
+    solfege: "2 (Re)",
+    freq: 293.66,
+    abcName: "D",
+    numbered: "2",
+    isNew: true,
+    recorderHoles: [1, 1, 1, 1, 1, 1, 1, 0], // [Thumb, H1, H2, H3, H4, H5, H6, H7]
+    bambooHoles: [1, 1, 1, 1, 1, 0],         // 筒音作1法: 按住2,3,4,5,6孔 (开1孔)
+    descRecorder: "左手按【背孔+1,2,3孔】，右手按【4,5,6孔】（仅放开最下方第7孔）",
+    descBamboo: "开第1孔 (按住第2, 3, 4, 5, 6孔，温和沉稳气流)"
   }
 };
 
@@ -367,18 +379,23 @@ const SONGS = [
     badgeClass: "badge-new-note",
     isNewNoteSong: true,
     bpm: 85,
-    description: "节奏轻快、耳熟能详的农场儿歌！综合运用 E G A B D 五音跳跃，考验右手迅速归位能力。",
-    abc: `X:14\nT:14. 老麦克唐纳 (Old MacDonald)\nM:4/4\nL:1/4\nK:C\n"G"G G G "D"d | "E"E E "D"d2 | "B"B B "A"A A | "G"G4 |\n"D"d "D"d "G"G2 | "D"d "D"d "G"G2 | "G"G/2G/2G/2G/2 "G"G G |\n"G"G G G "D"d | "E"E E "D"d2 | "B"B B "A"A A | "G"G4 |]`,
+    description: "经典农场儿歌！使用纯正低音 D 与低音 E，音阶平顺纯正，练习双手按满 6 孔的沉稳气息。",
+    abc: `X:14\nT:14. 老麦克唐纳 (Old MacDonald)\nM:4/4\nL:1/4\nK:C\n"G"G G G "D"D | "E"E E "D"D2 | "B"B B "A"A A | "G"G4 |\n"G"G G G "D"D | "E"E E "D"D2 | "B"B B "A"A A | "G"G4 |\n"G"G G "G"G2 | "G"G G "G"G2 | "G"G/2G/2G/2G/2 "G"G G | "G"G/2G/2G/2G/2 "G"G2 |\n"G"G G G "D"D | "E"E E "D"D2 | "B"B B "A"A A | "G"G4 |]`,
     notes: [
-      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "D5", dur: 1 },
-      { note: "E4", dur: 1 }, { note: "E4", dur: 1 }, { note: "D5", dur: 2 },
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "D4", dur: 1 },
+      { note: "E4", dur: 1 }, { note: "E4", dur: 1 }, { note: "D4", dur: 2 },
       { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 }, { note: "A4", dur: 1 },
       { note: "G4", dur: 4 },
-      { note: "D5", dur: 1 }, { note: "D5", dur: 1 }, { note: "G4", dur: 2 },
-      { note: "D5", dur: 1 }, { note: "D5", dur: 1 }, { note: "G4", dur: 2 },
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "D4", dur: 1 },
+      { note: "E4", dur: 1 }, { note: "E4", dur: 1 }, { note: "D4", dur: 2 },
+      { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 }, { note: "A4", dur: 1 },
+      { note: "G4", dur: 4 },
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 2 },
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 2 },
       { note: "G4", dur: 0.5 }, { note: "G4", dur: 0.5 }, { note: "G4", dur: 0.5 }, { note: "G4", dur: 0.5 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 },
-      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "D5", dur: 1 },
-      { note: "E4", dur: 1 }, { note: "E4", dur: 1 }, { note: "D5", dur: 2 },
+      { note: "G4", dur: 0.5 }, { note: "G4", dur: 0.5 }, { note: "G4", dur: 0.5 }, { note: "G4", dur: 0.5 }, { note: "G4", dur: 2 },
+      { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "G4", dur: 1 }, { note: "D4", dur: 1 },
+      { note: "E4", dur: 1 }, { note: "E4", dur: 1 }, { note: "D4", dur: 2 },
       { note: "B4", dur: 1 }, { note: "B4", dur: 1 }, { note: "A4", dur: 1 }, { note: "A4", dur: 1 },
       { note: "G4", dur: 4 }
     ]
